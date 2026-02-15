@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+	/* Forest colors - primary greens */
+	--color-forest-50: #f0f7f4;
+	--color-forest-100: #dceee4;
+	--color-forest-200: #b9ddc9;
+	--color-forest-300: #8dc5a7;
+	--color-forest-400: #5fa682;
+	--color-forest-500: #3f8a64;
+	--color-forest-600: #2d6e4e;
+	--color-forest-700: #24583f;
+	--color-forest-800: #1e4633;
+	--color-forest-900: #1a3a2b;
+	--color-forest-950: #0e2118;
+
+	/* Earth colors - browns and tans */
+	--color-earth-50: #f6f5f0;
+	--color-earth-100: #e9e6d9;
+	--color-earth-200: #d5ceb5;
+	--color-earth-300: #bcb089;
+	--color-earth-400: #a69466;
+	--color-earth-500: #978259;
+	--color-earth-600: #80694b;
+	--color-earth-700: #67523f;
+	--color-earth-800: #574538;
+	--color-earth-900: #4b3c32;
+	--color-earth-950: #28201a;
+
+	/* Trail colors - muted greens */
+	--color-trail-50: #f4f6f3;
+	--color-trail-100: #e5e9e3;
+	--color-trail-200: #ccd4c8;
+	--color-trail-300: #a8b6a3;
+	--color-trail-400: #7f937a;
+	--color-trail-500: #60775d;
+	--color-trail-600: #4a5e48;
+	--color-trail-700: #3c4c3b;
+	--color-trail-800: #323e31;
+	--color-trail-900: #2b352a;
+	--color-trail-950: #151c15;
+}

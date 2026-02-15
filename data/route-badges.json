@@ -1,0 +1,5 @@
+{
+	"example-route-123": ["beginner", "scenic", "flat"],
+	"example-route-456": ["intermediate", "hilly", "popular"],
+	"example-route-789": ["advanced", "certified", "featured"]
+}
