@@ -10,7 +10,7 @@
 
 <div class="min-h-screen bg-gradient-to-b from-forest-50 via-white to-earth-50">
 	<!-- Hero Section -->
-	<div class="relative bg-gradient-to-br from-forest-800 via-forest-700 to-earth-800 text-white overflow-hidden">
+	<div class="relative bg-gradient-to-b from-forest-700 to-earth-800 text-white overflow-hidden">
 		<!-- Decorative background pattern -->
 		<div class="absolute inset-0 opacity-10">
 			<svg class="absolute left-0 top-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">

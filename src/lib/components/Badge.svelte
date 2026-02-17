@@ -22,7 +22,7 @@
 
 {#if badgeInfo}
 	<span 
-		class="inline-flex items-center border font-medium {badgeInfo.color} {sizeClasses[size]}"
+		class="inline-flex items-center border font-semibold uppercase tracking-wide {badgeInfo.color} {sizeClasses[size]}"
 		title={badgeInfo.label}
 	>
 		{badgeInfo.label}

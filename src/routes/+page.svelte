@@ -89,7 +89,7 @@
 
 <div class="min-h-screen bg-gradient-to-b from-forest-50 via-white to-earth-50">
 	<!-- Hero Section -->
-	<div class="relative bg-gradient-to-br from-forest-800 via-forest-700 to-earth-800 text-white overflow-hidden">
+	<div class="relative bg-gradient-to-b from-forest-700 to-earth-800 text-white overflow-hidden">
 		<!-- Decorative background pattern -->
 		<div class="absolute inset-0 opacity-10">
 			<svg class="absolute left-0 top-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -186,15 +186,15 @@
 				<div class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm md:text-base hero-features">
 					<div class="flex items-center gap-2">
 						<div class="w-2 h-2 rounded-full bg-forest-300 animate-pulse-slow"></div>
-						<span class="text-forest-100">Road</span>
+						<span class="text-forest-100">🚴 Road</span>
 					</div>
 					<div class="flex items-center gap-2">
 						<div class="w-2 h-2 rounded-full bg-trail-300 animate-pulse-slow" style="animation-delay: 0.5s;"></div>
-						<span class="text-forest-100">Gravel</span>
+						<span class="text-forest-100">🚵 Gravel</span>
 					</div>
 					<div class="flex items-center gap-2">
 						<div class="w-2 h-2 rounded-full bg-forest-400 animate-pulse-slow" style="animation-delay: 1s;"></div>
-						<span class="text-forest-100">Mountain</span>
+						<span class="text-forest-100">⛰️ Mountain</span>
 					</div>
 				</div>
 			</div>
