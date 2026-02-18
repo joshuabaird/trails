@@ -60,7 +60,7 @@ RIDEWITHGPS_API_SECRET=your-api-secret-here
 
 4. **Configure route lists**
 
-Edit `data/route-lists.json` to specify which RideWithGPS lists to display for each category:
+Edit `src/lib/data/route-lists.json` to specify which RideWithGPS lists to display for each category:
 
 ```json
 {
@@ -82,9 +82,9 @@ Visit [http://localhost:5173](http://localhost:5173) to see your app!
 
 ### Badge Management
 
-Badges are managed through JSON configuration files in the `data/` directory:
+Badges are managed through JSON configuration files in the `src/lib/data/` directory:
 
-#### `data/route-badges.json`
+#### `src/lib/data/route-badges.json`
 
 Assign badges to specific routes:
 
@@ -95,7 +95,7 @@ Assign badges to specific routes:
 }
 ```
 
-#### `data/badge-info.json`
+#### `src/lib/data/badge-info.json`
 
 Define badge types and their visual styling:
 
@@ -125,6 +125,10 @@ trails/
 │   ├── lib/
 │   │   ├── api/          # RideWithGPS API integration
 │   │   ├── components/   # Reusable Svelte components
+│   │   ├── data/         # JSON configuration files
+│   │   │   ├── route-lists.json
+│   │   │   ├── route-badges.json
+│   │   │   └── badge-info.json
 │   │   ├── stores/       # Svelte stores for state management
 │   │   ├── types/        # TypeScript type definitions
 │   │   └── utils/        # Utility functions
@@ -133,10 +137,6 @@ trails/
 │   │   └── routes/[id]/          # Route detail pages
 │   ├── app.css           # Global styles with Tailwind
 │   └── app.html          # HTML template
-├── data/                 # JSON configuration files
-│   ├── route-lists.json
-│   ├── route-badges.json
-│   └── badge-info.json
 ├── static/               # Static assets
 └── docs/                 # Documentation
 ```
@@ -160,7 +160,7 @@ Routes are automatically pulled from RideWithGPS lists. To feature new routes:
 
 ### Adding Badges to Routes
 
-1. Open `data/route-badges.json`
+1. Open `src/lib/data/route-badges.json`
 2. Add an entry with the route ID and desired badges:
 
 ```json
@@ -179,7 +179,7 @@ Routes are automatically pulled from RideWithGPS lists. To feature new routes:
 export type BadgeType = 'beginner' | 'your-new-badge' | ...;
 ```
 
-2. Add badge info to `data/badge-info.json`:
+2. Add badge info to `src/lib/data/badge-info.json`:
 
 ```json
 {
@@ -210,8 +210,8 @@ Follow the prompts and make sure to add your environment variables in the Vercel
 
 Make sure to set these in your hosting platform:
 
+- `RIDEWITHGPS_AUTH_TOKEN`
 - `RIDEWITHGPS_API_KEY`
-- `RIDEWITHGPS_API_SECRET`
 
 ## Contributing
 
