@@ -2,6 +2,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import TrailConditionsBanner from
 	import '../app.css';
 
 	let { children } = $props();
@@ -13,7 +14,8 @@
 
 <div class="flex flex-col min-h-screen">
 	<Navigation />
-	<main class="flex-1">
+        <TrailConditionsBanner />
+	<main class="flex-1"> 
 		{@render children()}
 	</main>
 	<Footer />
