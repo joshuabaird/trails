@@ -1,12 +1,11 @@
 <!-- Trailhead Map Component using Leaflet.js -->
 <!--
 	SSR safety:
-	- CSS is imported statically (Vite/SvelteKit strips CSS on SSR, safe)
+	- Leaflet CSS is imported globally in app.css (avoids Vite SSR CSS handling issues)
 	- Leaflet JS is imported dynamically inside onMount (requires window, never runs on server)
 -->
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import 'leaflet/dist/leaflet.css';
 	import type { Trailhead } from '$lib/types';
 
 	interface Props {
@@ -21,6 +20,7 @@
 	let leaflet: typeof import('leaflet') | null = null;
 	let map: import('leaflet').Map | null = null;
 	let markerMap = new Map<string, import('leaflet').Marker>();
+	let initialBounds: import('leaflet').LatLngBounds | null = null;
 
 	// --- Icon factory ---
 	// Uses inline SVG divIcon to avoid Leaflet's default image path issues in SvelteKit builds.
@@ -54,22 +54,32 @@
 	let previousSelectedId: string | null = null;
 
 	$effect(() => {
+		// Read selectedId FIRST so Svelte always registers it as a dependency,
+		// even when the early return below fires on the initial render (before
+		// onMount has initialised the map).
+		const id = selectedId;
+
 		if (!map || !leaflet) return;
 
-		if (previousSelectedId && previousSelectedId !== selectedId) {
+		if (previousSelectedId && previousSelectedId !== id) {
 			updateMarkerIcon(previousSelectedId, false);
 		}
 
-		if (selectedId) {
-			const marker = markerMap.get(selectedId);
+		if (id) {
+			const marker = markerMap.get(id);
 			if (marker) {
-				updateMarkerIcon(selectedId, true);
+				updateMarkerIcon(id, true);
 				map.panTo(marker.getLatLng(), { animate: true });
 				marker.openPopup();
 			}
+		} else if (previousSelectedId) {
+			// Deselected — zoom back out to show all markers
+			if (initialBounds) {
+				map.fitBounds(initialBounds, { padding: [48, 48], maxZoom: 14, animate: true });
+			}
 		}
 
-		previousSelectedId = selectedId ?? null;
+		previousSelectedId = id ?? null;
 	});
 
 	// --- Map initialisation (client-only) ---
@@ -101,12 +111,12 @@
 			markerMap.set(trailhead.id, marker);
 		}
 
-		// Fit viewport to show all markers with padding
+		// Fit viewport to show all markers with padding; store bounds for "Show all" reset
 		if (trailheads.length > 0) {
-			const bounds = leaflet.latLngBounds(
+			initialBounds = leaflet.latLngBounds(
 				trailheads.map((t) => [t.lat, t.lng] as [number, number])
 			);
-			map.fitBounds(bounds, { padding: [48, 48], maxZoom: 14 });
+			map.fitBounds(initialBounds, { padding: [48, 48], maxZoom: 14 });
 		}
 	});
 
@@ -116,4 +126,4 @@
 	});
 </script>
 
-<div bind:this={mapEl} class="w-full h-full min-h-[420px] rounded-lg z-0"></div>
+<div bind:this={mapEl} class="w-full h-full min-h-[300px] lg:min-h-[520px] rounded-lg z-0"></div>

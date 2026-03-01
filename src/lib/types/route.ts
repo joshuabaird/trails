@@ -82,7 +82,7 @@ export interface Trailhead {
 	lat: number;              // WGS84 latitude
 	lng: number;              // WGS84 longitude
 	address?: string;         // Street address
-	parking: 'none' | 'limited' | 'ample';
+	parking: boolean;             // parking available on-site?
 	water: boolean;           // Potable water available on-site?
 	restrooms: boolean;       // Restrooms on-site?
 	surfaceType?: string;     // e.g. "paved", "gravel", "dirt", "mixed"

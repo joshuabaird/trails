@@ -16,3 +16,7 @@ We want to showcase Boyle County's trailheads in a new section on the site.
 * Create a new API endpoint `/trailheads`
 * Create a new "trailheads" page at `/trailheads` and fetch trailheads from our own `trailheads` API
 * Add a navigation item for "Trailheads"
+
+
+## Questions
+* Do we want to display pictures of each trailhead?     

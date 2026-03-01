@@ -12,6 +12,7 @@
 	
 	const navLinks = [
 		{ href: '/', label: 'Routes' },
+		{ href: '/trailheads', label: 'Trailheads' },
 		{ href: '/about', label: 'About' },
 	];
 </script>
