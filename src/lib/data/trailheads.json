@@ -1,0 +1,41 @@
+[
+	{
+		"id": "perryville-battlefield",
+		"name": "Perryville Battlefield State Historic Site",
+		"lat": 37.6497,
+		"lng": -84.9672,
+		"address": "1825 Battlefield Rd, Perryville, KY 40468",
+		"parking": true,
+		"water": true,
+		"restrooms": true,
+		"surfaceType": "mixed",
+		"description": "A scenic historic site with gravel and grass trails winding through the Civil War battlefield. Ample parking and full facilities make this an excellent starting point for nearby rides.",
+		"nearbyRouteIds": []
+	},
+	{
+		"id": "millennium-park",
+		"name": "Millennium Park",
+		"lat": 37.6419,
+		"lng": -84.7792,
+		"address": "1051 Louisville Rd, Danville, KY 40422",
+		"parking": true,
+		"water": true,
+		"restrooms": true,
+		"surfaceType": "paved",
+		"description": "A well-maintained community park with paved paths and easy access to Danville's street network. Great launching point for road rides heading north or west out of town.",
+		"nearbyRouteIds": []
+	},
+	{
+		"id": "pioneer-playhouse",
+		"name": "Pioneer Playhouse Trailhead",
+		"lat": 37.6318,
+		"lng": -84.7614,
+		"address": "840 Stanford Rd, Danville, KY 40422",
+		"parking": false,
+		"water": false,
+		"restrooms": false,
+		"surfaceType": "gravel",
+		"description": "Informal gravel trailhead along Stanford Rd offering access to rural gravel roads south of Danville. Limited roadside parking — arrive early on weekends.",
+		"nearbyRouteIds": []
+	}
+]

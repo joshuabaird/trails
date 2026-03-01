@@ -74,3 +74,18 @@ export interface BadgeInfo {
 	color: string; // Tailwind color class
 	icon?: string;
 }
+
+// Trailhead data (stored in src/lib/data/trailheads.json)
+export interface Trailhead {
+	id: string;               // URL-safe slug, e.g. "perryville-battlefield"
+	name: string;             // Display name
+	lat: number;              // WGS84 latitude
+	lng: number;              // WGS84 longitude
+	address?: string;         // Street address
+	parking: boolean;             // parking available on-site?
+	water: boolean;           // Potable water available on-site?
+	restrooms: boolean;       // Restrooms on-site?
+	surfaceType?: string;     // e.g. "paved", "gravel", "dirt", "mixed"
+	description?: string;
+	nearbyRouteIds?: number[]; // RideWithGPS route IDs to show as "nearby routes"
+}

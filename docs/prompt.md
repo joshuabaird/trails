@@ -34,3 +34,8 @@ This website is for a local trails alliance.  The color scheme should be "nature
 The project should be cleanly organized in one repo which contains all backend and frontend components.
 
 We should provide an easy way for developers to run the app locally.
+
+## TODO
+
+* Instead of using local badge system for `featured` -- just use a RWGPS collection named `featured`
+* Integrate trailheads
